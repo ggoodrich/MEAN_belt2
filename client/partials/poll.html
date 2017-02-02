@@ -1,0 +1,21 @@
+<a href="#!/dashboard">Go to Polls</a>
+<h3>{{ac.options[0]._poll.question}}</h3>
+
+<p>Click the Value button to choose one</p>
+<div ng-init="ac.getOptions()"></div>
+<table>
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>Current Count of Votes</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="option in ac.options">
+			<td>{{option.option}}</td>
+			<td>{{option.count}}</td>
+			<td><button ng-click="ac.addVote(option._id)">Vote</button></td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,22 @@
+Welcome {{ac.name}}
+<p><a href="#!/" ng-click="ac.logout()">Logout</a></p>
+<p><a href="#!/create">Create New Poll</a></p>
+<input type="text" placeholder="Search" ng-model="searchFilter">
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Surevey Question</th>
+			<th>Date Posted</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="poll in ac.polls | filter:searchFilter" >
+			<td>{{poll._user.name}}</td>
+			<td><a href="#!/poll/{{poll._id}}">{{poll.question}}</a></td>
+			<td>{{poll.createdAt | date: shortDate}}</td>
+			<td ng-if="ac.id == poll._user._id"><a href ng-click="ac.delete(poll._id)">Delete</a></td>
+		</tr>
+	</tbody>
+</table>

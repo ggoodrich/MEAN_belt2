@@ -1,0 +1,18 @@
+<a href="#!/dashboard">Cancel</a>
+<form ng-submit="ac.createPoll()">
+	<h3>Put the question and options here:</h3>
+	<div><p>{{ac.reject.data}}<p></div>
+	<label>Question: </label>
+	<input type="text" name="question" ng-model="ac.newPoll.question">
+	<label>Option 1: </label>
+	<input type="text" name="option1" ng-model="ac.newPoll.options.option1">
+	<label>Option 2: </label>
+	<input type="text" name="option2" ng-model="ac.newPoll.options.option2">
+	<label>Option 3: </label>
+	<input type="text" name="option3" ng-model="ac.newPoll.options.option3">
+	<label>Option 4: </label>
+	<input type="text" name="option4" ng-model="ac.newPoll.options.option4">
+	<input type="submit" name="submit" value="Create Poll">
+
+
+</form>
